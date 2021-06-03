@@ -1,3 +1,12 @@
+function inlog(){
+    var gebruikersnaam = document.forms["inloggen"]["gebruikersnaam"].value;
+    var wachtwoord= document.forms["inloggen"]["wachtwoord"].value;
+
+    document.getElementById("login").onclick = function () {
+        location.href = "../Status/status.html";
+    };
+}
+
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -15,4 +24,5 @@ function readTextFile(file)
     }
     rawFile.send(null);
 }
-const status = document.getElementById("statusen").textContent = readTextFile("status.txt");
+
+

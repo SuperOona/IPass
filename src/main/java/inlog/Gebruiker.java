@@ -12,7 +12,7 @@ public class Gebruiker {
     private ArrayList<Gebruiker> allGebruikers = new ArrayList<>();
     private Gebruiker currentUser;
 
-    public Gebruiker (String gebruikersNaam, String wachtWoord){
+    public Gebruiker(String gebruikersNaam, String wachtWoord) {
         this.gebruikersNaam = gebruikersNaam;
         this.wachtWoord = wachtWoord;
     }
@@ -22,13 +22,13 @@ public class Gebruiker {
         String pw = getWachtwoord();*/
         Path pad = Path.of("inlogGegevens.txt");
         List<String> alleRegels = Files.readAllLines(pad);
-        for (String regel : alleRegels){
+        for (String regel : alleRegels) {
             String[] parts = regel.split(":");
             String username = parts[0];
             String wachtwoord = parts[1];
-            if(user.equals(username)&& pw.equals(wachtwoord)){
+           /* if(user.equals(username)&& pw.equals(wachtwoord)){
                 setCurrentUser();
-            }
+            }*/
         }
         /*errorAlert.setHeaderText("Error");
         errorAlert.setContentText("Gebruikersnaam of wachtwoord incorrect.");
@@ -36,9 +36,10 @@ public class Gebruiker {
     }
 
     private void setCurrentUser() {
-        String pw = passwordField.getText();
+        /*String pw = passwordField.getText();
         for (Gebruiker user : allGebruikers){
             if (pw.equals(user.getWachtwoord())){
                 currentUser = user;
-            }
+            }*/
+    }
 }

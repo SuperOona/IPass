@@ -8,14 +8,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Status {
+    private static Status deStatus;
     private String jaNee;
     private String status;
     private Gebruiker gebruiker;
     private LocalDate date;
-    private static List<Status> oudStatus;
+    private static final ArrayList<Status> alleStatus = new ArrayList<>();
 
 
     public Status(String jaNee, String reden) {
@@ -24,28 +27,21 @@ public class Status {
         this.date = LocalDate.now();
     }
 
-    public void readFile() throws IOException {
-        Path pad = Path.of("oudStatus.txt");
-        List<String> alleRegels = Files.readAllLines(pad);
-        for (String regel : alleRegels) {
-            String[] parts = regel.split(":");
-            String jaNee = parts[0];
-            String reden = parts[1];
-            Status status = new Status(jaNee, reden);
-            oudStatus.add(status);
-        }
+    public static void setDeStatus(Status deStatus){
+        Status.deStatus = deStatus;
     }
 
-    public static List<Status> getAllStatus(){
-        return oudStatus;
+    public static ArrayList<Status> getAlleStatus(){
+        return alleStatus;
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getStatus() {
-        return Response.ok(Status.getAllStatus()).build();
-
+    public static void voegStatusToe(String jaNee, String status){
+        Status status1 = new Status(jaNee, status);
+        alleStatus.add(status1);
     }
+
+
+
 }
 
 

@@ -9,5 +9,8 @@
         <module name="IPass" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="IPass" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
