@@ -7,12 +7,12 @@
 <body>
 <h1>Login</h1>
 
-<form action="" method="get">
+<form name="inloggen" onsubmit="inlog()" method="post">
     <label for="gebruikersnaam">Gebruikersnaam:</label>
     <input type="text" id="gebruikersnaam" name="gebruikersnaam"> <br><br>
     <label for="wachtwoord">Wachtwoord:</label>
-    <input type="text" id="wachtwoord" name="wachtwoord"><br><br>
-    <input type="submit" value="Submit">
+    <input type="password" id="wachtwoord" name="wachtwoord"><br><br>
+    <button id="login"> login</button>
 </form>
 </body>
 </html>
