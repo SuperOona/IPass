@@ -1,6 +1,10 @@
+let status = document.querySelector("#statusen")
 
-
-const status = document.getElementById("statusen").textContent = "hell yeah";
+fetch("/restservices/allproducts").then(r=>r.json()).then(cs=> {
+    for (let c of cs) {
+        status.innerHTML+=c.status
+    }
+});
 
 document.getElementById("myButton").onclick = function () {
     location.href = "../Inlog/inlog.html";

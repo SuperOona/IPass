@@ -9,13 +9,14 @@
 <h1>Is de realm gereset?</h1>
 <form action="/IPass/src/main/Status/status.html?_ijt=khd9j5ngl40kfn40539ihm5584" method="get"
       name="status" onsubmit="return newStatus()">
-    <label for="ja">Ja:</label>
-    <input type="checkbox" id="ja" name="ja">
-    <label for="nee">Nee:</label>
-    <input type="checkbox" id="nee" name="nee"> <br><br>
+    <label for="jaNee">Ja of nee:</label>
+     <select id="jaNee" name="jaNee" size="1" multiple>
+         <option value="ja">Ja</option>
+         <option value="nee">Nee</option>
+     </select> <br><br>
     <label for="reden">Reden:</label>
-    <input type="text" id="reden" name="reden"><br><br>
-    <input type="submit" value="Submit">
+    <input type="" id="reden" name="reden"><br><br>
+    <input type="submit" value="Submit" onsubmit="newStatus()">
 </form>
 <script type="text/javascript" src="status.js">
 </script>

@@ -4,7 +4,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
 
-@ApplicationPath("/oonaIsCool")
+@ApplicationPath("oonaIsCool")
 public class JerseyConfig extends ResourceConfig {
-    public JerseyConfig() { packages("webservices");}
+    public JerseyConfig() { packages("webservices", "setup", "inlog", "webapp");}
 }
