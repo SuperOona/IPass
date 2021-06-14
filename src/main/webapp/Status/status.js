@@ -1,3 +1,4 @@
+/*
 function newStatus(){
     var ja = document.forms["status"]["ja"].value;
     var nee = document.forms["status"]["nee"].value;
@@ -20,4 +21,8 @@ function writeTextFile(afilename, output) {
     var txtFile =new File(afilename);
     txtFile.writeln(output+"\n");
     txtFile.close();
+}*/
+
+document.getElementById("submit").onclick = function (){
+
 }

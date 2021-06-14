@@ -18,10 +18,12 @@ public class StatusResource {
     }
 
 
-    /*@POST //naar back-end
+    @POST //naar back-end
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getStatusHome(String jaNee, String reden){
-        return Response.ok("Peop").build();
-    }*/
+    public Response getStatusHome(@FormParam("jaNee") String jaNee, @FormParam("reden") String reden){
+        Status stat = new Status(jaNee, reden);
+        stat.voegStatusToe(stat);
+        return Response.ok("Status verwerkt").build();
+    }
 
 }

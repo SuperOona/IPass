@@ -35,9 +35,8 @@ public class Status {
         return alleStatus;
     }
 
-    public static void voegStatusToe(String jaNee, String status){
-        Status status1 = new Status(jaNee, status);
-        alleStatus.add(status1);
+    public void voegStatusToe(Status stat){
+        alleStatus.add(stat);
     }
 
 
