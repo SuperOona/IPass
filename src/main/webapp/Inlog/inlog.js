@@ -1,28 +1,12 @@
-function inlog(){
-    var gebruikersnaam = document.forms["inloggen"]["gebruikersnaam"].value;
-    var wachtwoord= document.forms["inloggen"]["wachtwoord"].value;
+import UserService from "userService.js";
 
-    document.getElementById("login").onclick = function () {
-        location.href = "../Status/status.html";
-    };
-}
-
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                alert(allText);
+document.querySelector("form button.primary-button").addEventListener("click", e => {
+    console.log("ontvangen")
+    e.preventDefault();
+    UserService.logIn(document.forms["login"].gebruikersnaam.value, document.forms["login"].wachtwoord.value)
+        .then(u => {
+            if (u != null) {
+                location.href = "Status/status.html";
             }
-        }
-    }
-    rawFile.send(null);
-}
-
-
+        });
+});

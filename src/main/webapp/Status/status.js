@@ -4,7 +4,7 @@ function newStatus(){
     var nee = document.forms["status"]["nee"].value;
     var reden = document.forms["status"]["reden"].value;
     if (ja === true && nee === false && reden !== "") {
-        var f = "status.txt";
+        var f = "oudStatus.json";
         writeTextFile(f, ja)
         writeTextFile(f, reden)
         return true;

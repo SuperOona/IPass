@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>inlog</title>
+    <script src="inlog.js" type="module"></script>
 </head>
 <body>
 <h1>Login</h1>
 
-<form name="inloggen" onsubmit="inlog()" method="post">
+<form id="login">
     <label for="gebruikersnaam">Gebruikersnaam:</label>
     <input type="text" id="gebruikersnaam" name="gebruikersnaam"> <br><br>
     <label for="wachtwoord">Wachtwoord:</label>
     <input type="password" id="wachtwoord" name="wachtwoord"><br><br>
-    <button id="login"> login</button>
+    <button type="submit" class="primary-button">Login</button>
 </form>
-<script type="text/javascript" src="inlog.js">
-</script>
 </body>
 </html>
